@@ -13,10 +13,10 @@ about: Capture result of test workload
 (Please attach sanitized configuration if needed)
 
 
-### Result [Success/Failure]:
+### Result [Success/Problem]:
+(Please apply the corresponding label to the issue to help us review reports.)
 
-
-### Failure Description(if needed):
+### Problem Description(if needed):
 
 
 # Describe Environment:
