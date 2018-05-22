@@ -6,12 +6,14 @@ This repository will be used for coordinating Sensu Test Day activities. You'll 
 
 ## General Test Day Workflow
 
+* Join #test-day channel in the Sensu Community Slack 
 * Read the specific feature testing guidance
 * Grab the test day docker images
 * Run through the provided baseline example
 * Check the testing spreadsheet, looking for specific workloads to test
 * Use the feature in a workload of your choosing
-* File test report by opening an issue in this repository. 
+* File test report by opening an issue in this repository.
+* Hop on the regularly scheduled Community Chat video call for some facetime if you can.
 
 ## Feature Guidance
 
