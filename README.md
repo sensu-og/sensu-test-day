@@ -4,6 +4,9 @@ This repository will be used for coordinating Sensu Test Day activities. You'll 
 ## Next Test Day: May 29, 2018
 ### Sensu 2.0 Beta Metric Extraction Feature
 
+We are working to put together the specific test plan for the upcoming test day. 
+Check back here for updates. 
+
 ## General Test Day Workflow
 
 * Join #test-day channel in the Sensu Community Slack 
