@@ -90,9 +90,9 @@ brew services start grafana
 You'll need to connect your Grafana dashboard to the InfluxDB datasource, so if
 you're unsure of how to do that yet, check out [this guide][11].
 
-![Dashboard 1](../dashboard1.png)
-![Dashboard 2](../dashboard2.png)
-![Dashboard 3](../dashboard3.png)
+![Dashboard 1](dashboard1.png)
+![Dashboard 2](dashboard2.png)
+![Dashboard 3](dashboard3.png)
 
 ## Test Plan
 
@@ -128,7 +128,7 @@ sensu-agent start --subscriptions graphite
 [9]: https://github.com/nikkiki/sensu-influxdb-handler/tree/master/examples
 [10]: https://github.com/nikkiki/sensu-influxdb-handler/releases
 [11]: http://docs.grafana.org/features/datasources/influxdb/
-[12]: ../resources.json
+[12]: resources.json
 [13]: https://github.com/nikkiki/sensu-influxdb-handler/blob/master/examples/metrics-influx.sh
 [14]: https://github.com/nikkiki/sensu-influxdb-handler/blob/master/examples/metrics-nagios.sh
 [15]: https://github.com/nikkiki/sensu-influxdb-handler/blob/master/examples/metrics-opentsdb.sh
