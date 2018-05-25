@@ -8,8 +8,9 @@ performance metrics such as check output metric extraction and StatsD. On its
 own, thats pretty cool, but combined with its robust event pipeline, you can
 cater different methods of metric analysis to your specific needs.
 
-<center>![Raise the roof](giphy.gif)</center>
-<center>*Raise the roof, 'cause your monitoring is all under one roof.*</center>
+![Raise the roof](https://media.giphy.com/media/i79P9wUfnmPyo/giphy.gif)
+
+*Raise the roof, 'cause your monitoring is all under one roof.*
 
 I'm going to walk you through just one of the endless permutations of metrics
 software you can pair with Sensu:
@@ -88,7 +89,9 @@ brew services start grafana
 ```
 
 You'll need to connect your Grafana dashboard to the InfluxDB datasource, so if
-you're unsure of how to do that yet, check out [this guide][11].
+you're unsure of how to do that yet, check out [this guide][11]. You can also
+utilize this [dashboard configuration][16] ensuring you add your host name
+where you see `[ENTITY NAME]` and configure the datasource as it's defined.
 
 ![Dashboard 1](dashboard1.png)
 ![Dashboard 2](dashboard2.png)
@@ -132,3 +135,4 @@ sensu-agent start --subscriptions graphite
 [13]: https://github.com/nikkiki/sensu-influxdb-handler/blob/master/examples/metrics-influx.sh
 [14]: https://github.com/nikkiki/sensu-influxdb-handler/blob/master/examples/metrics-nagios.sh
 [15]: https://github.com/nikkiki/sensu-influxdb-handler/blob/master/examples/metrics-opentsdb.sh
+[16]: grafana-config.json
