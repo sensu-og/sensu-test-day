@@ -1,0 +1,122 @@
+{
+  "type": "CheckConfig",
+  "spec": {
+    "command": "metrics-graphite.sh",
+    "environment": "default",
+    "handlers": [],
+    "high_flap_threshold": 0,
+    "interval": 1,
+    "low_flap_threshold": 0,
+    "name": "collect-graphite",
+    "organization": "default",
+    "publish": true,
+    "runtime_assets": [],
+    "subscriptions": [
+      "graphite"
+    ],
+    "proxy_entity_id": "",
+    "check_hooks": null,
+    "subdue": null,
+    "ttl": 0,
+    "timeout": 0,
+    "output_metric_format": "graphite_plaintext",
+    "output_metric_handlers": [
+      "sensu-influxdb-handler"
+    ]
+  }
+}
+{
+  "type": "CheckConfig",
+  "spec": {
+    "command": "metrics-influx.sh",
+    "environment": "default",
+    "handlers": [],
+    "high_flap_threshold": 0,
+    "interval": 1,
+    "low_flap_threshold": 0,
+    "name": "collect-influx",
+    "organization": "default",
+    "publish": true,
+    "runtime_assets": [],
+    "subscriptions": [
+      "influx"
+    ],
+    "proxy_entity_id": "",
+    "check_hooks": null,
+    "subdue": null,
+    "ttl": 0,
+    "timeout": 0,
+    "output_metric_format": "influxdb_line",
+    "output_metric_handlers": [
+      "sensu-influxdb-handler"
+    ]
+  }
+}
+{
+  "type": "CheckConfig",
+  "spec": {
+    "command": "metrics-nagios.sh",
+    "environment": "default",
+    "handlers": [],
+    "high_flap_threshold": 0,
+    "interval": 1,
+    "low_flap_threshold": 0,
+    "name": "collect-nagios",
+    "organization": "default",
+    "publish": true,
+    "runtime_assets": [],
+    "subscriptions": [
+      "nagios"
+    ],
+    "proxy_entity_id": "",
+    "check_hooks": null,
+    "subdue": null,
+    "ttl": 0,
+    "timeout": 0,
+    "output_metric_format": "nagios_perfdata",
+    "output_metric_handlers": [
+      "sensu-influxdb-handler"
+    ]
+  }
+}
+{
+  "type": "CheckConfig",
+  "spec": {
+    "command": "metrics-opentsdb.sh",
+    "environment": "default",
+    "handlers": [],
+    "high_flap_threshold": 0,
+    "interval": 1,
+    "low_flap_threshold": 0,
+    "name": "collect-opentsdb",
+    "organization": "default",
+    "publish": true,
+    "runtime_assets": [],
+    "subscriptions": [
+      "opentsdb"
+    ],
+    "proxy_entity_id": "",
+    "check_hooks": null,
+    "subdue": null,
+    "ttl": 0,
+    "timeout": 0,
+    "output_metric_format": "opentsdb_line",
+    "output_metric_handlers": [
+      "sensu-influxdb-handler"
+    ]
+  }
+}
+{
+  "type": "Handler",
+  "spec": {
+    "name": "sensu-influxdb-handler",
+    "type": "pipe",
+    "command": "sensu-influxdb-handler --addr [address] --username [username] --password [password] --db-name [db-name]",
+    "timeout": 0,
+    "handlers": [],
+    "filters": [],
+    "env_vars": [],
+    "environment": "default",
+    "organization": "default"
+  }
+}
