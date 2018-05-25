@@ -24,7 +24,7 @@ Here are some feature specific resources you'll want to review:
 Check back soon, being worked on now
 
 # Test Reports
-We want to here about all the workloads you test, both your successes and the problems you run into. To file a test report open an issue in this repository and choose the Test Report template.  
+We want to hear about all the workloads you test, both your successes and the problems you run into. To file a test report for a workload, open an issue in this repository and choose the Test Report template. 
 
 # Making Test Days Better
-We are always looking to make the test day experience better, so if you have some constructive feedback on the test day process, we'd love to hear it. Please open up an issue in this repository and let us know what your thinking.
+We are always looking to make the test day experience better, so if you have some constructive feedback on the test day process, we'd love to hear it. Please open up an issue in this repository and let us know what you are thinking.
