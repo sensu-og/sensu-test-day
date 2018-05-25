@@ -8,9 +8,9 @@ performance metrics such as check output metric extraction and StatsD. On its
 own, thats pretty cool, but combined with its robust event pipeline, you can
 cater different methods of metric analysis to your specific needs.
 
-![Raise the roof](https://media.giphy.com/media/i79P9wUfnmPyo/giphy.gif)
+                       ![Raise the roof](giphy.gif)
 
-*Raise the roof, 'cause your monitoring is all under one roof.*
+        *Raise the roof, 'cause your monitoring is all under one roof.*
 
 I'm going to walk you through just one of the endless permutations of metrics
 software you can pair with Sensu:
