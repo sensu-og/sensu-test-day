@@ -1,6 +1,8 @@
 # Docker Images for Migration Extraction Example
 These images provide most of what you need to work through the `collect_metrics` test plan example. Once you have the docker containers running, you will need to use sensuctl to create the check and handler definitions as per the Test Plan.
 
+Assuming you are running docker on localhost, the pre-configured grafana dashboard will be available at http://localhost/3001
+
 ## Docker Commands
 
 ###  Initialize influxdb
