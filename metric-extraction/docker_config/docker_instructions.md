@@ -1,5 +1,7 @@
+# Docker Images for Migration Extraction Example
+These images provide most of what you need to work through the `collect_metrics` test plan example. Once you have the docker containers running, you will need to use sensuctl to create the check and handler definitions as per the Test Plan.
 
-# Docker Commands
+## Docker Commands
 
 ###  Initialize influxdb
 The provided 20180529-influxdb docker image relies on persistent storage bind mount in which to hold the initialized database.
@@ -20,7 +22,7 @@ docker run -v /var/lib/influxdb:/var/lib/influxdb --name=influxdb -d -p 8086:808
 ```
 
 ### Start grafana
-The 2018-05-29-grafana image is pre-configured with an influxdb datastore definition matching the above docker commands.
+The 2018-05-29-grafana image is pre-configured with an influxdb datastore definition matching the above docker commands. The influxdb docker container needs to be started first
 
 ```
 docker run   -d   -p 3001:3000   --name=grafana  --link influxdb -e "GF_SECURITY_ADMIN_PASSWORD=TestDay!"   sensuapp/feature-test-day:20180529-grafana
