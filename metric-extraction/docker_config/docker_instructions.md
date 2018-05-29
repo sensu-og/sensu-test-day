@@ -42,7 +42,7 @@ docker run -v /var/lib/sensu:/var/lib/sensu -d --link influxdb --name sensu-back
 20180529-sensu docker image pre-loaded wih metrics-graphite.sh command for use in example metric check in test plan. The sensu-backend docker container needs to be started first
 
 ```
-sudo docker run -v /var/lib/sensu:/var/lib/sensu -d --link sensu-backend --name sensu-agent \
+docker run -v /var/lib/sensu:/var/lib/sensu -d --link sensu-backend --name sensu-agent \
 sensuapp/feature-test-day:20180529-sensu sensu-agent start --backend-url ws://sensu-backend:8081 --subscriptions metrics,system --cache-dir /var/lib/sensu
 ```
 ## Sensuctl Commands
