@@ -21,7 +21,9 @@ Here are some feature specific resources you'll want to review:
 * [Sensu Docs Guide](https://docs.sensu.io/sensu-core/2.0/guides/extract-metrics-with-checks/#what-are-sensu-checks)
 
 ## Docker Images
-Check back soon, being worked on now
+There are 3 docker images as a starting point for this test day
+
+* [Docker Image Instructions](metric-extraction/docker_config/docker_instructions.md)
 
 # Test Reports
 We want to hear about all the workloads you test, both your successes and the problems you run into. To file a test report for a workload, open an issue in this repository and choose the Test Report template. 
