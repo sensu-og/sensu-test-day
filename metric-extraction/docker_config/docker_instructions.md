@@ -77,3 +77,9 @@ sensuctl handler create sensu-influxdb-handler --command "sensu-influxdb-handler
 ```
 sensuctl check set-output-metric-handlers collect-metrics sensu-influxdb-handler
 ```
+
+## Resources
+### [grafana-config.json](grafana-config.json)
+grafana dashboard pre-loaded into grafana docker image
+### [metrics-graphite.sh](metrics-graphite.sh) 
+test metrics in graphite output format pre-loaded into sensu docker image, compatible with pre-loaded grafana dashboard
