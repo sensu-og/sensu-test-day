@@ -1,13 +1,13 @@
 cpu () {
-	echo test-day-agent.cpu $(($RANDOM%100)) $(date +%s)
+	echo test-day-agent.cpu $(mpstat | awk '$11 ~ /[0-9.]+/ { print 100 - $11 }') $(date +%s)
 }
 
 disk_io () {
-	echo test-day-agent.disk_io $(($RANDOM%500)) $(date +%s)
+	echo test-day-agent.disk_io $(iostat -d -z ALL | awk 'NF==6 {s+=$2} END {print s}') $(date +%s)
 }
 
 disk_usage () {
-	echo test-day-agent.disk_usage $(($(($RANDOM%10))+30)) $(date +%s)
+	echo test-day-agent.disk_usage $(df -k / | awk 'NR > 1 {print $5}' | cut -d "%" -f 1) $(date +%s)
 }
 
 heartbeat () {
@@ -15,7 +15,7 @@ heartbeat () {
 }
 
 memory () {
-	echo test-day-agent.memory $(($RANDOM%50)) $(date +%s)
+	echo test-day-agent.memory $(free -m | awk 'NR==2{printf "%.2f", $3*100/$2 }') $(date +%s)
 }
 
 network_io () {
