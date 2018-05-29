@@ -1,7 +1,10 @@
 # Docker Images for Migration Extraction Example
 These images provide most of what you need to work through the `collect_metrics` test plan example. Once you have the docker containers running, you will need to use sensuctl to create the check and handler definitions as per the Test Plan.
 
-Assuming you are running docker on localhost, the pre-configured grafana dashboard will be available at http://localhost/3001
+Assuming you are running docker on localhost, the pre-configured grafana dashboard will be available at http://localhost:3001
+
+
+You'll also need the [sensuctl program](https://docs.sensu.io/sensu-core/2.0/getting-started/configuring-sensuctl/) running on localhost. 
 
 ## Docker Commands
 
@@ -39,13 +42,27 @@ docker run -v /var/lib/sensu:/var/lib/sensu -d --link influxdb --name sensu-back
 ```
 
 ### Start Sensu Agent
-20180529-sensu docker image pre-loaded wih metrics-graphite.sh command for use in example metric check in test plan. The sensu-backend docker container needs to be started first
+20180529-sensu docker image pre-loaded wih the metrics-graphite.sh command for use in the example metric check in the test plan. The sensu-backend docker container needs to be started first
 
 ```
 docker run -v /var/lib/sensu:/var/lib/sensu -d --link sensu-backend --name sensu-agent \
 sensuapp/feature-test-day:20180529-sensu sensu-agent start --backend-url ws://sensu-backend:8081 --subscriptions metrics,system --cache-dir /var/lib/sensu
 ```
 ## Sensuctl Commands
+Once the containers are running, you'll need to use sensuctl on localhost to create sensu resource definitions.
+
+### Sensuctl Configure
+configure sensuctl with default sensu-backend admin user and password
+Set user to `admin`  password `P@ssw0rd!`
+```
+sensuctl configure
+```
+### Reset Admin Password
+change the admin password.
+```
+sensuctl user change-password admin --interactive
+```
+
 ### Create Check
 ```
 sensuctl check create collect-metrics --command metrics-graphite.sh --interval 1 --subscriptions metrics --output-metric-format graphite_plaintext
