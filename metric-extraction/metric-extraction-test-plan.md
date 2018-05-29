@@ -24,7 +24,8 @@ see [Installation and Configuration][5].
 
 ## Collecting Metrics
 To collect metrics using Sensu check output metric extraction, you'll first need
-to spin up a backend, agent, and cli.
+to spin up a backend, agent, and cli.  If you plan to use the provided Test Day Docker images please
+over this first and then follow the [docker instructions][17]
 
 Backend:
 ```
@@ -136,3 +137,4 @@ sensu-agent start --subscriptions graphite
 [14]: https://github.com/nikkiki/sensu-influxdb-handler/blob/master/examples/metrics-nagios.sh
 [15]: https://github.com/nikkiki/sensu-influxdb-handler/blob/master/examples/metrics-opentsdb.sh
 [16]: grafana-config.json
+[17]: docker_config/docker_instructions.md
