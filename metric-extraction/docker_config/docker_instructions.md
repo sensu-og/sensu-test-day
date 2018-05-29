@@ -30,14 +30,14 @@ docker run   -d   -p 3001:3000   --name=grafana  --link influxdb -e "GF_SECURITY
 
 
 ### start sensu backend
-20180529-sensu docker image pre-loaded with influxdb handler command as used in example metrics handler in test plan.
+20180529-sensu docker image pre-loaded with influxdb handler command as used in example metrics handler in test plan. The influxdb docker container needs to be started first
 ```
 docker run -v /var/lib/sensu:/var/lib/sensu -d --link influxdb --name sensu-backend -p 2380:2380 \
 -p 3000:3000 -p 8080:8080 -p 8081:8081  sensuapp/feature-test-day:20180529-sensu sensu-backend start
 ```
 
 ### Start sensu-agent
-20180529-sensu docker image pre-loaded wih metrics-graphite.sh command for use in example metric check in test plan. 
+20180529-sensu docker image pre-loaded wih metrics-graphite.sh command for use in example metric check in test plan. The sensu-backend docker container needs to be started first
 
 ```
 sudo docker run -v /var/lib/sensu:/var/lib/sensu -d --link sensu-backend --name sensu-agent \
