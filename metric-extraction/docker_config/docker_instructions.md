@@ -1,5 +1,5 @@
 # Docker Images for Migration Extraction Example
-These images provide most of what you need to work through the `collect_metrics` test plan example. Once you have the docker containers running, you will need to use sensuctl to create the check and handler definitions as per the Test Plan.
+These images provide most of what you need to work through the `collect_metrics` test plan example. Once you have the docker containers running, you will need to use sensuctl to create the check and handler definitions as per the [Test Plan](https://github.com/sensu/sensu-test-day/blob/master/metric-extraction/metric-extraction-test-plan.md).
 
 Assuming you are running docker on localhost, the pre-configured grafana dashboard will be available at http://localhost:3001
 
