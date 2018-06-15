@@ -1,15 +1,12 @@
-# Welcome to the Sensu-Test-Day repository
-This repository will be used for coordinating Sensu Test Day activities. You'll want to check back here each test day to look for updated instructions and guidance for test day focus. 
 
-## Next Test Day: June 26, 2018
-### Sensu 2.0 Beta: Translating Sensu 1.x Configs.
+### Sensu 2.0 Beta: Metric Extraction Feature
 
-Welcome to Sensu Feature Test Day!
+The organized test day for this feature is over, but you can still help us by testing this feature and contributing test reports!
 
 ## General Test Day Workflow
 * Join #test-day channel in the Sensu Community Slack 
 * Read the specific feature testing guidance
-* Grab the test day docker images if you need them.
+* Grab the test day docker images (please check back soon, we are spinning these up now)
 * Run through the provided baseline example in the test plan
 * Use the feature in a workload of your choosing
 * File test report by opening an issue in this repository
@@ -17,11 +14,13 @@ Welcome to Sensu Feature Test Day!
 
 ## Feature Guidance
 Here are some feature specific resources you'll want to review:
-* [Test Plan](1.x-to-2.x-migrate/test-plan.md)
-* [Sensu Translator](https://github.com/sensu/sensu-translator)
+* [Test Plan](metric-extraction-test-plan.md)
+* [Sensu Docs Guide](https://docs.sensu.io/sensu-core/2.0/guides/extract-metrics-with-checks/#what-are-sensu-checks)
 
 ## Docker Images
-Coming Soon
+There are 3 docker images as a starting point for this test day
+
+* [Docker Image Instructions](docker_config/docker_instructions.md)
 
 # Test Reports
 We want to hear about all the workloads you test, both your successes and the problems you run into. To file a test report for a workload, open an issue in this repository and choose the Test Report template. 
