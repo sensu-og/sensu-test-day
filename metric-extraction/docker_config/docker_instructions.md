@@ -1,5 +1,5 @@
 # Docker Images for Migration Extraction Example
-These images provide most of what you need to work through the `collect_metrics` test plan example. Once you have the docker containers running, you will need to use sensuctl to create the check and handler definitions as per the Test Plan.
+These images provide most of what you need to work through the `collect_metrics` test plan example. Once you have the docker containers running, you will need to use sensuctl to create the check and handler definitions as per the [Test Plan](https://github.com/sensu/sensu-test-day/blob/master/metric-extraction/metric-extraction-test-plan.md).
 
 Assuming you are running docker on localhost, the pre-configured grafana dashboard will be available at http://localhost:3001
 
@@ -79,7 +79,30 @@ sensuctl check set-output-metric-handlers collect-metrics sensu-influxdb-handler
 ```
 
 ## Resources
-### [grafana-config.json](grafana-config.json)
+
+### Output Metric Format Check Subscriptions
+| Check | collect-graphite | collect-influx | collect-nagios | collect-opentsdb |
+| ----- | ---------------- | -------------- | -------------- | ---------------- |
+| Subscription | `graphite` | `influx` | `nagios` | `opentsdb` |
+| Command | [metrics-graphite.sh][1] | [metrics-influx.sh][2] | [metrics-nagios.sh][3] | [metrics-opentsdb.sh][4] |
+| Output Metric Format | `graphite_plaintext` | `influxdb_line` | `nagios_perfdata` | `opentsdb_line` |
+
+These metric check commands are pre-loaded into the 20180529-sensu docker image. They may need adjustment to work correctly in other operating system environments.
+
+### [resources.json][6]
+Use with `sensuctl create` to setup the collection of output metric format check subscriptions listed above. `resources.json` in this directory is pre-configured with influxdb authorization matching the db init command above.
+```
+sensuctl create -f resources.json
+```
+you can now cycle through the subscriptions by removing the existing sensu-agent container and re-running it using a different subscription.
+
+### [grafana-config.json][5]
 grafana dashboard pre-loaded into grafana docker image
-### [metrics-graphite.sh](metrics-graphite.sh) 
-test metrics in graphite output format pre-loaded into sensu docker image, compatible with pre-loaded grafana dashboard
+
+[1]: metrics-graphite.sh
+[2]: metrics-influx.sh
+[3]: metrics-nagios.sh
+[4]: metrics-opentsdb.sh
+[5]: grafana-config.json
+[6]: resources.json
+
